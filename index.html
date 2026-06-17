@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cidadania Digital e IA</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+/* MENU */
+header {
+  background: #1e293b;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: #38bdf8;
+  margin: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* SEÇÕES */
+section {
+  display: none;
+  padding: 30px;
+}
+
+.active {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  background: linear-gradient(45deg, #0ea5e9, #1e293b);
+  padding: 60px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+}
+
+/* BOTÕES */
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background: #38bdf8;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.alerta {
+  color: yellow;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌐 Cidadania Digital e IA</h1>
+  <nav>
+    <a onclick="mostrar('inicio')">Início</a>
+    <a onclick="mostrar('deepfakes')">Deepfakes</a>
+    <a onclick="mostrar('desinformacao')">Desinformação</a>
+    <a onclick="mostrar('quiz')">Quiz</a>
+    <a onclick="mostrar('sobre')">Sobre</a>
+  </nav>
+</header>
+
+<!-- INÍCIO -->
+<section id="inicio" class="active">
+
+  <div class="hero">
+    <h2>O impacto das deepfakes e da desinformação</h2>
+    <p>Entenda como a inteligência artificial está mudando a sociedade.</p>
+    <button onclick="alertaIA()">Saiba mais</button>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🤖 IA</h3>
+      <p>Criação de conteúdos realistas.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎭 Deepfakes</h3>
+      <p>Imagens e vídeos manipulados.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚠️ Desinformação</h3>
+      <p>Notícias falsas na internet.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- DEEPFAKES -->
+<section id="deepfakes">
+
+  <h2>🎭 Deepfakes</h2>
+  <p>Deepfakes são conteúdos criados por IA que simulam pessoas reais.</p>
+
+  <button onclick="toggleInfo()">Ver impacto</button>
+
+  <div id="info" class="hidden">
+    <p>Podem ser usados para entretenimento ou manipulação de informações.</p>
+  </div>
+
+</section>
+
+<!-- DESINFORMAÇÃO -->
+<section id="desinformacao">
+
+  <h2>⚠️ Desinformação</h2>
+
+  <ul>
+    <li>Redes sociais</li>
+    <li>Algoritmos</li>
+    <li>Falta de verificação</li>
+  </ul>
+
+  <button onclick="alertar()">Mostrar alerta</button>
+
+  <p id="msg" class="alerta hidden">
+    ⚠️ Sempre verifique antes de compartilhar!
+  </p>
+
+</section>
+
+<!-- QUIZ -->
+<section id="quiz">
+
+  <h2>🧩 Quiz</h2>
+
+  <p>O que é uma deepfake?</p>
+  <button onclick="responder(true)">Conteúdo gerado por IA</button>
+  <button onclick="responder(false)">Um vírus</button>
+
+  <p>Como combater desinformação?</p>
+  <button onclick="responder(true)">Checar fontes</button>
+  <button onclick="responder(false)">Compartilhar rápido</button>
+
+  <p id="resultado"></p>
+
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+
+  <h2>ℹ️ Sobre</h2>
+  <p>
+    Este site explica os impactos da Inteligência Artificial na sociedade,
+    com foco em deepfakes e desinformação.
+  </p>
+
+</section>
+
+<script>
+function mostrar(secao) {
+  let secoes = document.querySelectorAll("section");
+
+  secoes.forEach(s => s.classList.remove("active"));
+
+  document.getElementById(secao).classList.add("active");
+}
+
+function alertaIA() {
+  alert("A IA pode ser usada tanto para o bem quanto para manipulação!");
+}
+
+function toggleInfo() {
+  document.getElementById("info").classList.toggle("hidden");
+}
+
+function alertar() {
+  document.getElementById("msg").classList.remove("hidden");
+}
+
+function responder(correto) {
+  let res = document.getElementById("resultado");
+
+  if (correto) {
+    res.innerHTML = "✔️ Resposta correta!";
+    res.style.color = "lightgreen";
+  } else {
+    res.innerHTML = "❌ Resposta incorreta!";
+    res.style.color = "red";
+  }
+}
+</script>
+
+</body>
+</html>
