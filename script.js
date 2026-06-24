@@ -1,77 +1,39 @@
-let acertos = 0;
-let erros = 0;
+/* ==========================================
+   LÓGICA INTERATIVA DO PORTAL DEEPFAKE Y2K
+   ========================================== */
 
-function mostrarAlerta() {
-  const mensagens = [
-    "🤖 A IA está revolucionando a educação!",
-    "🚀 A tecnologia muda o mundo todos os dias!",
-    "💡 Informação é poder!",
-    "🌎 A IA está presente em várias áreas da sociedade!"
-  ];
-
-  const sorteio = Math.floor(Math.random() * mensagens.length);
-  alert(mensagens[sorteio]);
+// 1. Função para Alternar entre as Abas do Site
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    
+    // Esconde todos os blocos de conteúdo das abas
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+    
+    // Remove a classe "active" (efeito visual de pressionada) de todos os botões de aba
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    
+    // Torna visível o conteúdo da aba que foi clicada
+    document.getElementById(tabName).classList.add("active");
+    
+    // Adiciona o destaque visual de "Ativo" no botão que o usuário clicou
+    evt.currentTarget.classList.add("active");
 }
 
-function alternarInfo() {
-  const info = document.getElementById("infoExtra");
-
-  if (info.classList.contains("hidden")) {
-    info.classList.remove("hidden");
-    info.style.opacity = "1";
-  } else {
-    info.classList.add("hidden");
-    info.style.opacity = "0";
-  }
-}
-
-function destacar() {
-  const alerta = document.getElementById("alerta");
-
-  const cores = [
-    "#ff4d4d",
-    "#4da6ff",
-    "#4dff88",
-    "#ffd24d",
-    "#d24dff"
-  ];
-
-  const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
-
-  alerta.style.backgroundColor = corAleatoria;
-  alerta.style.transform = "scale(1.05)";
-
-  setTimeout(() => {
-    alerta.style.transform = "scale(1)";
-  }, 300);
-}
-
-function responder(btn, correto) {
-  const resultado = document.getElementById("resultado");
-  const placar = document.getElementById("placar");
-
-  btn.disabled = true;
-
-  if (correto) {
-    acertos++;
-
-    resultado.innerHTML = "✔️ Muito bem! Você acertou!";
-    resultado.style.color = "lightgreen";
-
-    document.body.style.backgroundColor = "#1f3d1f";
-  } else {
-    erros++;
-
-    resultado.innerHTML = "❌ Ops! Tente novamente.";
-    resultado.style.color = "#ff4d4d";
-
-    document.body.style.backgroundColor = "#3d1f1f";
-  }
-
-  placar.innerHTML =
-    `🏆 Acertos: ${acertos} | ❌ Erros: ${erros}`;
-
-  setTimeout(() => {
-    document.body.style.backgroundColor = "";
-  }, 1000);
+// 2. Função para Verificar a Resposta do Cyber-Quiz
+function checkAnswer(isCorrect) {
+    var resultDiv = document.getElementById("quiz-result");
+    
+    if (isCorrect) {
+        resultDiv.innerHTML = "🟩 ACESSO CONCEDIDO, CIBER-DETETIVE!<br>Resposta correta. Investigar em fontes oficiais antes de partilhar é a melhor arma contra as armadilhas digitais e manipulações por IA.";
+        resultDiv.style.color = "#008000"; // Verde escuro para sucesso
+    } else {
+        resultDiv.innerHTML = "🟥 ERRO CRÍTICO DE SISTEMA!<br>Opção perigosa detectada. Lembra-te: os deepfakes atuais imitam perfeitamente a realidade. Nunca repasses conteúdo alarmante sem verificar primeiro!";
+        resultDiv.style.color = "#ff0000"; // Vermelho para erro
+    }
 }
