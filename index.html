@@ -1,228 +1,362 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Cidadania Digital e IA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ PORTAL DEEPFAKE Y2K - PROJETO ESCOLAR ⚡</title>
+    <style>
+        /* Estilo Anos 2000 (Y2K / Estilo Retro Web) */
+        * {
+            box-sizing: border-box;
+            font-family: "MS Sans Serif", "Courier New", Tahoma, sans-serif;
+        }
+        
+        body {
+            background-color: #008080; /* Azul-piscina clássico do Windows 95/2000 */
+            color: #000000;
+            margin: 0;
+            padding: 10px;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-}
+        /* Container do Computador Antigo */
+        .desktop-window {
+            background-color: #c0c0c0;
+            border: 3px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            max-width: 900px;
+            margin: 20px auto;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.5);
+        }
 
-/* MENU */
-header {
-  background: #1e293b;
-  padding: 15px;
-  text-align: center;
-}
+        /* Barra de Título */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 4px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-nav a {
-  color: #38bdf8;
-  margin: 10px;
-  text-decoration: none;
-  cursor: pointer;
-}
+        .title-bar-buttons button {
+            background-color: #c0c0c0;
+            border: 1px solid;
+            border-color: #ffffff #5a5a5a #5a5a5a #ffffff;
+            padding: 1px 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 11px;
+        }
 
-nav a:hover {
-  text-decoration: underline;
-}
+        /* Banner Principal / GIF Animado Fake simulado */
+        .banner {
+            background-color: #000;
+            color: #00ff00;
+            text-align: center;
+            padding: 15px;
+            border: 2px inset #fff;
+            margin: 10px;
+            font-family: 'Courier New', monospace;
+        }
 
-/* SEÇÕES */
-section {
-  display: none;
-  padding: 30px;
-}
+        .marquee-text {
+            background-color: #ff00ff;
+            color: white;
+            font-weight: bold;
+            padding: 3px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
 
-.active {
-  display: block;
-}
+        /* Sistema de Abas Clássico */
+        .tabs-menu {
+            display: flex;
+            padding-left: 10px;
+            margin-bottom: -2px;
+            border-bottom: 2px solid #808080;
+            background-color: #d8d8d8;
+        }
 
-/* HERO */
-.hero {
-  text-align: center;
-  background: linear-gradient(45deg, #0ea5e9, #1e293b);
-  padding: 60px;
-}
+        .tab-link {
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            border-bottom: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-right: 4px;
+            font-weight: bold;
+            font-size: 13px;
+        }
 
-/* CARDS */
-.cards {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-}
+        .tab-link.active {
+            background-color: #eee;
+            padding-bottom: 8px;
+            margin-top: -2px;
+            border-color: #ffffff #808080 #eee #ffffff;
+            z-index: 2;
+        }
 
-.card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  width: 30%;
-}
+        /* Conteúdo das Abas */
+        .window-body {
+            background-color: #ffffff;
+            border: 2px inset #ffffff;
+            margin: 10px;
+            padding: 15px;
+            min-height: 400px;
+        }
 
-/* BOTÕES */
-button {
-  padding: 10px;
-  margin-top: 10px;
-  background: #38bdf8;
-  border: none;
-  cursor: pointer;
-}
+        .tab-content {
+            display: none;
+        }
 
-.hidden {
-  display: none;
-}
+        .tab-content.active {
+            display: block;
+        }
 
-.alerta {
-  color: yellow;
-  font-weight: bold;
-}
+        /* Elementos Retro */
+        h2 {
+            color: #000080;
+            border-bottom: 2px dotted #000080;
+            padding-bottom: 5px;
+            margin-top: 0;
+            font-size: 18px;
+        }
 
-</style>
+        .alert-box {
+            background-color: #ffffcc;
+            border: 2px dashed #ff0000;
+            padding: 10px;
+            margin: 15px 0;
+        }
+
+        /* Tabelas e Listas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 2px solid #808080;
+        }
+
+        th {
+            background-color: #000080;
+            color: white;
+            padding: 6px;
+            text-align: left;
+        }
+
+        td {
+            padding: 6px;
+            background-color: #f0f0f0;
+        }
+
+        /* Estilo do Quiz */
+        .quiz-option {
+            background-color: #e0e0e0;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .quiz-option:hover {
+            background-color: #b5b5b5;
+        }
+
+        .btn-retro {
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #5a5a5a #5a5a5a #ffffff;
+            padding: 5px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-retro:active {
+            border-color: #5a5a5a #ffffff #ffffff #5a5a5a;
+        }
+
+        /* Contador de visitas clássico */
+        .visitor-counter {
+            background-color: #000;
+            color: #ff0000;
+            font-family: monospace;
+            font-size: 16px;
+            padding: 3px 6px;
+            border: 1px inset #fff;
+            display: inline-block;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #ffffff;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>🌐 Cidadania Digital e IA</h1>
-  <nav>
-    <a onclick="mostrar('inicio')">Início</a>
-    <a onclick="mostrar('deepfakes')">Deepfakes</a>
-    <a onclick="mostrar('desinformacao')">Desinformação</a>
-    <a onclick="mostrar('quiz')">Quiz</a>
-    <a onclick="mostrar('sobre')">Sobre</a>
-  </nav>
-</header>
+    <div class="desktop-window">
+        <!-- Barra de Título do Windows -->
+        <div class="title-bar">
+            <span>💻 Internet Explorer - Projeto_Deepfake_2000.html</span>
+            <div class="title-bar-buttons">
+                <button>_</button>
+                <button>🗖</button>
+                <button style="color:red;">X</button>
+            </div>
+        </div>
 
-<!-- INÍCIO -->
-<section id="inicio" class="active">
+        <!-- Letreiro Piscante / Marquee Clássico -->
+        <div class="marquee-text">
+            ⚠️ ALERTA DE TECNOLOGIA: O que é real e o que é inteligência artificial? Descubra abaixo! ⚠️
+        </div>
 
-  <div class="hero">
-    <h2>O impacto das deepfakes e da desinformação</h2>
-    <p>Entenda como a inteligência artificial está mudando a sociedade.</p>
-    <button onclick="alertaIA()">Saiba mais</button>
-  </div>
+        <!-- Banner Estilo Y2K -->
+        <div class="banner">
+            <h1>🛸 DETECTOR DE DEEPFAKES v1.0 🛸</h1>
+            <p>Seu guia cibernético definitivo na era da manipulação digital</p>
+        </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>🤖 IA</h3>
-      <p>Criação de conteúdos realistas.</p>
+        <!-- Menu de Abas (Interatividade) -->
+        <div class="tabs-menu">
+            <button class="tab-link active" onclick="openTab(event, 'inicio')">🏠 Início</button>
+            <button class="tab-link" onclick="openTab(event, 'tecnologia')">⚙️ Como Funciona</button>
+            <button class="tab-link" onclick="openTab(event, 'combate')">🛡️ Como Combater</button>
+            <button class="tab-link" onclick="openTab(event, 'fontes')">📚 Fontes Confiáveis</button>
+            <button class="tab-link" onclick="openTab(event, 'desafio')">🎮 Desafio Cyber-Quiz</button>
+        </div>
+
+        <!-- Corpo das Páginas/Abas -->
+        <div class="window-body">
+            
+            <!-- ABA 1: INÍCIO -->
+            <div id="inicio" class="tab-content active">
+                <h2>O que é um Deepfake?</h2>
+                <p>Bem-vindo ao nosso portal hipertextual! O termo <strong>Deepfake</strong> vem da mistura de <em>"Deep Learning"</em> (Aprendizado Profundo) e <em>"Fake"</em> (Falso).</p>
+                <p>É uma tecnologia que usa Inteligência Artificial para trocar o rosto ou a voz de pessoas em vídeos ou áudios com uma precisão assustadora, fazendo parecer que disseram ou fizeram coisas que nunca aconteceram na vida real!</p>
+                
+                <div class="alert-box">
+                    <strong>🚨 NOTA DE SEGURANÇA:</strong> Embora pareça mágica de cinema, os deepfakes estão sendo usados de forma perigosa na internet para espalhar mentiras e golpes cibernéticos.
+                </div>
+            </div>
+
+            <!-- ABA 2: TECNOLOGIA -->
+            <div id="tecnologia" class="tab-content">
+                <h2>Os Bastidores da Inteligência Artificial</h2>
+                <p>Para criar essas falsificações, os computadores usam um sistema chamado <strong>GANs (Redes Adversárias Generativas)</strong>. Pense nisso como uma batalha entre dois robôs digitais:</p>
+                
+                <table>
+                    <tr>
+                        <th>O Gerador (O Falsificador)</th>
+                        <th>O Discriminador (O Detetive)</th>
+                    </tr>
+                    <tr>
+                        <td>A sua única função é criar imagens falsas da pessoa tentando deixá-las o mais perfeitas possível.</td>
+                        <td>A sua função é analisar a imagem gerada e tentar descobrir se ela é real ou uma cópia feita pela IA.</td>
+                    </tr>
+                </table>
+                <p>Eles repetem esse processo milhões de vezes até que o falsificador fica tão bom que nem o detetive robô consegue diferenciar! É assim que um deepfake perfeito nasce.</p>
+            </div>
+
+            <!-- ABA 3: COMO COMBATER -->
+            <div id="combate" class="tab-content">
+                <h2>Como Detectar e Combater um Deepfake?</h2>
+                <p>Não se deixe enganar pelo Matrix! Você pode treinar seus olhos para perceber falhas comuns em vídeos manipulados:</p>
+                <ul>
+                    <li><strong>Olhos que não piscam:</strong> Muitas ferramentas antigas ou amadoras esquecem de simular o piscar natural dos olhos.</li>
+                    <li><strong>Sincronia labial estranha:</strong> Repare se o som da voz bate exatamente com o movimento da boca.</li>
+                    <li><strong>Iluminação e Sombras:</strong> Muitas vezes o brilho no rosto da pessoa não combina com o fundo do cenário.</li>
+                    <li><strong>Bordas borradas:</strong> Olhe atentamente perto das orelhas, cabelo e queixo para ver se há partes tremidas ou pixeladas.</li>
+                </ul>
+                <div class="alert-box" style="background-color: #ccffcc; border-color: #008000;">
+                    <strong>Regra de Ouro da Internet:</strong> Viu um vídeo bombástico? Não compartilhe antes de jogar o nome daquela notícia em um motor de busca confiável!
+                </div>
+            </div>
+
+            <!-- ABA 4: FONTES CONFIÁVEIS -->
+            <div id="fontes" class="tab-content">
+                <h2>Onde encontrar informações reais e científicas?</h2>
+                <p>Para o seu trabalho escolar ficar nota 10, use agências e projetos oficiais que estudam a desinformação e tecnologia:</p>
+                <ol>
+                    <li><strong>Agência Lupa / Aos Fatos:</strong> Portais brasileiros especializados em checar se vídeos e notícias virais são reais ou montagens.</li>
+                    <li><strong>M.I.T. (Massachusetts Institute of Technology):</strong> O projeto <em>"Detect Fakes"</em> do MIT traz pesquisas avançadas sobre como a mente humana lida com mídias sintéticas.</li>
+                    <li><strong>LGPD e Comitê Gestor da Internet (CGI.br):</strong> Ótimos guias sobre direitos digitais e segurança para jovens no Brasil.</li>
+                </ol>
+            </div>
+
+            <!-- ABA 5: QUIZ INTERATIVO -->
+            <div id="desafio" class="tab-content">
+                <h2>Desafio Hacker: Você sabe identificar a verdade?</h2>
+                <p>Clique na opção correta para testar seu conhecimento digital:</p>
+                
+                <div id="quiz-block">
+                    <p><strong>Pergunta: Se você receber um vídeo de um político ou celebridade falando algo absurdo e bizarro, qual deve ser seu primeiro passo?</strong></p>
+                    <div class="quiz-option" onclick="checkAnswer(false)">A) Compartilhar imediatamente no grupo da família para alertar todo mundo o quanto antes.</div>
+                    <div class="quiz-option" onclick="checkAnswer(true)">B) Desconfiar, não repassar e pesquisar em sites de notícias confiáveis para ver se o vídeo é real.</div>
+                    <div class="quiz-option" onclick="checkAnswer(false)">C) Acreditar 100% afinal, se está em vídeo, com certeza aconteceu de verdade.</div>
+                </div>
+                <div id="quiz-result" style="margin-top:15px; font-weight:bold; color:#000080;"></div>
+            </div>
+
+        </div>
+
+        <!-- Rodapé do Sistema -->
+        <div style="padding: 10px; display: flex; justify-content: space-between; align-items: center; background-color: #c0c0c0; border-top: 2px solid #808080;">
+            <div>
+                <span>Visitante Nº: </span>
+                <div class="visitor-counter">0002489</div>
+            </div>
+            <button class="btn-retro" onclick="alert('Sistema Reiniciado! Obrigado por acessar.')">Resetar Terminal</button>
+        </div>
     </div>
 
-    <div class="card">
-      <h3>🎭 Deepfakes</h3>
-      <p>Imagens e vídeos manipulados.</p>
-    </div>
+    <footer>
+        <p>© 2000-2026 Projeto Escolar S.A. - Feito para fins educacionais e defesa cibernética.</p>
+    </footer>
 
-    <div class="card">
-      <h3>⚠️ Desinformação</h3>
-      <p>Notícias falsas na internet.</p>
-    </div>
-  </div>
+    <script>
+        // Lógica de alternar abas de forma interativa
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Esconde todas as abas
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove a classe "active" de todos os botões
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            
+            // Mostra a aba atual e adiciona a classe ativa ao botão clicado
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
 
-</section>
-
-<!-- DEEPFAKES -->
-<section id="deepfakes">
-
-  <h2>🎭 Deepfakes</h2>
-  <p>Deepfakes são conteúdos criados por IA que simulam pessoas reais.</p>
-
-  <button onclick="toggleInfo()">Ver impacto</button>
-
-  <div id="info" class="hidden">
-    <p>Podem ser usados para entretenimento ou manipulação de informações.</p>
-  </div>
-
-</section>
-
-<!-- DESINFORMAÇÃO -->
-<section id="desinformacao">
-
-  <h2>⚠️ Desinformação</h2>
-
-  <ul>
-    <li>Redes sociais</li>
-    <li>Algoritmos</li>
-    <li>Falta de verificação</li>
-  </ul>
-
-  <button onclick="alertar()">Mostrar alerta</button>
-
-  <p id="msg" class="alerta hidden">
-    ⚠️ Sempre verifique antes de compartilhar!
-  </p>
-
-</section>
-
-<!-- QUIZ -->
-<section id="quiz">
-
-  <h2>🧩 Quiz</h2>
-
-  <p>O que é uma deepfake?</p>
-  <button onclick="responder(true)">Conteúdo gerado por IA</button>
-  <button onclick="responder(false)">Um vírus</button>
-
-  <p>Como combater desinformação?</p>
-  <button onclick="responder(true)">Checar fontes</button>
-  <button onclick="responder(false)">Compartilhar rápido</button>
-
-  <p id="resultado"></p>
-
-</section>
-
-<!-- SOBRE -->
-<section id="sobre">
-
-  <h2>ℹ️ Sobre</h2>
-  <p>
-    Este site explica os impactos da Inteligência Artificial na sociedade,
-    com foco em deepfakes e desinformação.
-  </p>
-
-</section>
-
-<script>
-function mostrar(secao) {
-  let secoes = document.querySelectorAll("section");
-
-  secoes.forEach(s => s.classList.remove("active"));
-
-  document.getElementById(secao).classList.add("active");
-}
-
-function alertaIA() {
-  alert("A IA pode ser usada tanto para o bem quanto para manipulação!");
-}
-
-function toggleInfo() {
-  document.getElementById("info").classList.toggle("hidden");
-}
-
-function alertar() {
-  document.getElementById("msg").classList.remove("hidden");
-}
-
-function responder(correto) {
-  let res = document.getElementById("resultado");
-
-  if (correto) {
-    res.innerHTML = "✔️ Resposta correta!";
-    res.style.color = "lightgreen";
-  } else {
-    res.innerHTML = "❌ Resposta incorreta!";
-    res.style.color = "red";
-
-    <p id="resultado"></p>
-
-<p id="placar">
-🏆 Acertos: 0 | ❌ Erros: 0
-</p>
-  }
-}
-</script>
-
+        // Lógica interativa do Quiz
+        function checkAnswer(isCorrect) {
+            var resultDiv = document.getElementById("quiz-result");
+            if(isCorrect) {
+                resultDiv.innerHTML = "🟩 EXCELENTE, CIBER-DETETIVE! Você acertou. Investigar antes de compartilhar é a melhor arma contra o deepfake.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.innerHTML = "🟥 ERRO DE SISTEMA! Opção perigosa. Lembre-se: deepfakes imitam a realidade perfeitamente, nunca repasse sem checar.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
 </body>
 </html>
