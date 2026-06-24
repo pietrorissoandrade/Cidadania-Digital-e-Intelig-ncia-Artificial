@@ -56,3 +56,22 @@ button {
   color: yellow;
   font-weight: bold;
 }
+
+.hidden {
+  display: none;
+}
+
+#alerta {
+  transition: all 0.3s ease;
+}
+
+#resultado {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#placar {
+  margin-top: 15px;
+  font-size: 20px;
+  color: gold;
+}
